@@ -1,0 +1,97 @@
+username.github.io# Simple workflow for deploying static content to GitHub Pages
+<DOCTYPE html>
+<html lang="nl"><!
+<head>
+  <meta charset="UTF-8" />
+  <title>Voorstel Checklist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f7f7f7;
+    }
+    img.logo {
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .checklist {
+      background-color: #e7ecfa;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .checklist p {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 14px;
+      color: #333333;
+    }
+    label {
+      display: block;
+      margin: 10px 0;
+      font-size: 1.2em;
+    }
+    #result {
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 1.7em;
+      padding: 10px 16px;
+      border-radius: 7px;
+      background-color: #fff;
+      display: inline-block;
+    }
+    .go {
+      color: green !important;
+      background-color: white !important;
+    }
+    .no-go {
+      color: red !important;
+      background-color: white !important;
+    }
+    button#submitBtn {
+      font-size: 1.4em;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <img src="Rebel-logo.jpg" alt="Rebel Logo" class="logo" />
+
+  <h1>Uw Nieuwe Voorstel</h1>
+  <form id="proposalForm">
+    <div class="checklist">
+      <p>Beantwoord deze vragen door de juiste vakjes aan te vinken en te verzenden:</p>
+      <label><input type="checkbox" name="checklist" /> Is het projectdoel duidelijk gedefinieerd?</label>
+      <label><input type="checkbox" name="checklist" /> Zijn de middelen beschikbaar voor uitvoering?</label>
+      <label><input type="checkbox" name="checklist" /> Is er instemming van belanghebbenden?</label>
+      <label><input type="checkbox" name="checklist" /> Zijn de risico's beoordeeld en beheersbaar?</label>
+      <label><input type="checkbox" name="checklist" /> Is er een duidelijke tijdlijn?</label>
+      <label><input type="checkbox" name="checklist" /> Zijn de deliverables gespecificeerd?</label>
+      <label><input type="checkbox" name="checklist" /> Sluit het voorstel aan bij de strategische doelen?</label>
+    </div>
+    <button type="button" id="submitBtn" onclick="evaluateProposal()">Checklist verzenden</button>
+  </form>
+  <div id="result"></div>
+  <script>
+    function evaluateProposal() {
+      const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+      const result = document.getElementById('result');
+      result.textContent = '';
+      result.classList.remove('go', 'no-go');
+
+      if (checked >= 5) {
+        result.textContent = 'JA: Dit voorstel kan worden geschreven.';
+        result.classList.add('go');
+      } else {
+        result.textContent = 'NEE: Voorstel moet worden herzien voordat het verdergaat.';
+        result.classList.add('no-go');
+      }
+    }
+  </script>
+</body>
+</html> Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
