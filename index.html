@@ -48,3 +48,54 @@
       color: red !important;
     }
     button.submitBtn {
+      font-size: 1.4em;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <!-- English Checklist -->
+  <section id="englishSection">
+    <img src="Rebel-logo.png" alt="Rebel Logo" class="logo" />
+    <h1>Your New Proposal</h1>
+    <form id="englishForm">
+      <div class="checklist">
+        <p>Please answer these questions by checking the appropriate boxes and submit:</p>
+        <label><input type="checkbox" name="englishChecklist" /> Is the project objective clearly defined</label>
+        <label><input type="checkbox" name="englishChecklist" /> Are resources available for implementation</label>
+        <label><input type="checkbox" name="englishChecklist" /> Is there stakeholder buy-in</label>
+        <label><input type="checkbox" name="englishChecklist" /> Are risks assessed and manageable</label>
+        <label><input type="checkbox" name="englishChecklist" /> Is there a clear timeline</label>
+        <label><input type="checkbox" name="englishChecklist" /> Are deliverables specified</label>
+        <label><input type="checkbox" name="englishChecklist" /> Does the proposal align with strategic goals</label>
+      </div>
+      <button type="button" class="submitBtn" onclick="evaluateProposal('englishForm', 'englishResult', 'en')">Submit Checklist</button>
+      <div id="englishResult" class="result"></div>
+    </form>
+  </section>
+
+  <!-- Dutch Checklist -->
+  <section id="dutchSection">
+    <img src="Rebel-logo.jpg" alt="Rebel Logo" class="logo" />
+    <h1>Uw Nieuwe Voorstel</h1>
+    <form id="dutchForm">
+      <div class="checklist">
+        <p>Beantwoord deze vragen door de juiste vakjes aan te vinken en te verzenden:</p>
+        <label><input type="checkbox" name="dutchChecklist" /> Is het projectdoel duidelijk gedefinieerd</label>
+        <label><input type="checkbox" name="dutchChecklist" /> Zijn de middelen beschikbaar voor uitvoering</label>
+        <label><input type="checkbox" name="dutchChecklist" /> Is er instemming van belanghebbenden</label>
+        <label><input type="checkbox" name="dutchChecklist" /> Zijn de risico's beoordeeld en beheersbaar</label>
+        <label><input type="checkbox" name="dutchChecklist" /> Is er een duidelijke tijdlijn</label>
+        <label><input type="checkbox" name="dutchChecklist" /> Zijn de deliverables gespecificeerd</label>
+        <label><input type="checkbox" name="dutchChecklist" /> Sluit het voorstel aan bij de strategische doelen</label>
+      </div>
+      <button type="button" class="submitBtn" onclick="evaluateProposal('dutchForm', 'dutchResult', 'nl')">Checklist verzenden</button>
+      <div id="dutchResult" class="result"></div>
+    </form>
+  </section>
+
+  <script>
+    function evaluateProposal(formId, resultId, lang) {
+      const form =
