@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Voorstel Checklist</title>
   <style>
     body {
       font-family: Verdana, Arial, sans-serif;
       margin: 30px;
       background-color: #ffeef4; /* Very light pink */
+    }
+    h1 {
+      font-size: 3em;
+      font-weight: bold;
+      margin-bottom: 12px; /* Smaller gap between title and first sentence */
     }
     .checklist {
       background-color: #e7ecfa;
@@ -50,9 +55,9 @@
       margin-top: 15px;
       border: none;
       border-radius: 6px;
-      background-color: #b2fab4; /* Light green */
+      background-color: #b2fab4; /* Light green button */
       color: #244224;
-      box-shadow: 0 2px 5px rgba(90,145,90,0.06);
+      box-shadow: 0 2px 5px rgba(90, 145, 90, 0.06);
       transition: background 0.2s;
     }
     #submitBtn:hover {
@@ -70,27 +75,27 @@
     <div class="checklist">
       <p>Beantwoord deze vragen door de juiste vakjes aan te vinken en te verzenden</p>
       <h2>Strategische fit</h2>
-      <label><input type="checkbox" name="checklist"> 1. Past de opdracht bij onze kernexpertise en positionering?</label>
-      <label><input type="checkbox" name="checklist"> 2. Levert de opdracht waarde als referentie of markttoegang?</label>
+      <label><input type="checkbox" name="checklist" /> 1. Past de opdracht bij onze kernexpertise en positionering?</label>
+      <label><input type="checkbox" name="checklist" /> 2. Levert de opdracht waarde als referentie of markttoegang?</label>
       <h2>Kans op succes</h2>
-      <label><input type="checkbox" name="checklist"> 3. Hebben we al een relatie of ingang bij de opdrachtgever?</label>
-      <label><input type="checkbox" name="checklist"> 4. Kunnen we ons onderscheiden van concurrenten?</label>
+      <label><input type="checkbox" name="checklist" /> 3. Hebben we al een relatie of ingang bij de opdrachtgever?</label>
+      <label><input type="checkbox" name="checklist" /> 4. Kunnen we ons onderscheiden van concurrenten?</label>
       <h2>Capaciteit & middelen</h2>
-      <label><input type="checkbox" name="checklist"> 5. Zijn deadlines haalbaar zonder overbelasting consultant/admin?</label>
-      <label><input type="checkbox" name="checklist"> 6. Kunnen we het alleen of met een beperkt aantal andere partners/onderaannemers?</label>
-      <label><input type="checkbox" name="checklist"> 7. Kunnen we het alleen of met een beperkt aantal andere ventures?</label>
+      <label><input type="checkbox" name="checklist" /> 5. Zijn deadlines haalbaar zonder overbelasting consultant/admin?</label>
+      <label><input type="checkbox" name="checklist" /> 6. Kunnen we het alleen of met een beperkt aantal andere partners/onderaannemers?</label>
+      <label><input type="checkbox" name="checklist" /> 7. Kunnen we het alleen of met een beperkt aantal andere ventures?</label>
       <h2>Financiële haalbaarheid</h2>
-      <label><input type="checkbox" name="checklist"> 8. Is de scope duidelijk en realistisch?</label>
-      <label><input type="checkbox" name="checklist"> 9. Is het budget voldoende voor de gevraagde inspanning?</label>
+      <label><input type="checkbox" name="checklist" /> 8. Is de scope duidelijk en realistisch?</label>
+      <label><input type="checkbox" name="checklist" /> 9. Is het budget voldoende voor de gevraagde inspanning?</label>
       <h2>Reputatie & impact</h2>
-      <label><input type="checkbox" name="checklist"> 10. Kan deze opdracht onze reputatie versterken of zichtbaarheid vergroten?</label>
-      <label><input type="checkbox" name="checklist"> 11. Biedt dit project kansen voor vervolgopdrachten/cross-selling?</label>
+      <label><input type="checkbox" name="checklist" /> 10. Kan deze opdracht onze reputatie versterken of zichtbaarheid vergroten?</label>
+      <label><input type="checkbox" name="checklist" /> 11. Biedt dit project kansen voor vervolgopdrachten/cross-selling?</label>
       <h2>Interne motivatie</h2>
-      <label><input type="checkbox" name="checklist"> 12. Is er enthousiasme in het team voor dit project?</label>
-      <label><input type="checkbox" name="checklist"> 13. Vinden we de inhoud interessant of uitdagend?</label>
+      <label><input type="checkbox" name="checklist" /> 12. Is er enthousiasme in het team voor dit project?</label>
+      <label><input type="checkbox" name="checklist" /> 13. Vinden we de inhoud interessant of uitdagend?</label>
       <h2>Klant & relatie</h2>
-      <label><input type="checkbox" name="checklist"> 14. Hebben we een goede relatie met de klant?</label>
-      <label><input type="checkbox" name="checklist"> 15. Is de samenwerking met deze klant in het verleden positief verlopen?</label>
+      <label><input type="checkbox" name="checklist" /> 14. Hebben we een goede relatie met de klant?</label>
+      <label><input type="checkbox" name="checklist" /> 15. Is de samenwerking met deze klant in het verleden positief verlopen?</label>
       <div>
         <button type="button" id="submitBtn" onclick="evaluateProposal()">Verzenden</button>
       </div>
@@ -99,15 +104,18 @@
   </form>
   <script>
     function evaluateProposal() {
-      const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
-      const result = document.getElementById('result');
-      result.classList.remove('go', 'no-go');
+      const checked = document.querySelectorAll(
+        'input[type="checkbox"]:checked'
+      ).length;
+      const result = document.getElementById("result");
+      result.classList.remove("go", "no-go");
       if (checked >= 10) {
         result.textContent = "JA: Dit voorstel kan worden geschreven.";
-        result.classList.add('go');
+        result.classList.add("go");
       } else {
-        result.textContent = "NEE: Voorstel moet worden herzien voordat het verdergaat.";
-        result.classList.add('no-go');
+        result.textContent =
+          "NEE: Voorstel moet worden herzien voordat het verdergaat.";
+        result.classList.add("no-go");
       }
     }
   </script>
